@@ -1,159 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="google-signin-client_id" content="109974535614-38ku0rbbjf3lmru0r8th6fj1s3lmvlkb.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Slab" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+        <link rel="stylesheet"              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <title>Keren News</title>
+    </head>
+    <body>
+        <!-- Start Code Here -->
 
-<head>
-	<title>Keren News</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	 crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/main.css">
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
-	<meta name="google-signin-client_id" content="109974535614-38ku0rbbjf3lmru0r8th6fj1s3lmvlkb.apps.googleusercontent.com">
+        <div class="d-flex justify-content-end mr-5 mt-5">
+            <h5 class="h5" onclick="signOut()">Sign Out</h5>
+        </div>
 
-</head>
+        <div class="container mt-5" id="main-container">
+            <div class="d-flex ml-2">
+                <h1 class="display-2 mb-3">Keren <i class="fab fa-neos"></i>ews</h1>
+            </div>
+            <div class="d-flex flex-column mt-4 col-4 mb-5">
+                <h1 class="h4 mb-3" id="h1-input">Input country name here:</h1>
+                <form class="" id="form-country">
+                    <input type="text" class="form-control" id="country-input" placeholder="Country">
+                    <button class="btn btn-dark mt-2 btn-block" type="submit">Submit</button>
+                </form>
+            </div>
 
-<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-				<a class="navbar-brand" href="/">Keren News</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				  <span class="navbar-toggler-icon"></span>
-				</button>
-			  
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				  <ul class="navbar-nav mr-auto">			
-					
-					
-				  </ul>
-				  <div class="form-inline my-2 my-lg-0">
-						<div id="gsignin" class="mt-2 g-signin2" data-onsuccess="onSignIn"></div>
-						<button id="gsignout" class="mt-2  ml-3 btn btn-info  ml-3" onclick="signOut();">Sign out</button>
-						<button id="reg" type="button" class="mt-2  ml-3 btn btn-primary" data-toggle="modal" data-target="#register">Register</button>
-						<button id="log" type="button" class="mt-2 ml-3 btn btn-primary" data-toggle="modal" data-target="#login">login</button>						
-				  </div>	 
-				</div>
-			  </nav>
+            <div class="row mb-5">
+                <div class="col-md-12 ml-3" id="map-wrapper">
+                    <h1 class="h4 mb-4 ml-1" id="h1-maps">Location Based on Google Maps</h1>
+                    <div id="map" class="mb-5"></div>
+                </div>
+            </div>
 
+            <div class="row mb-5 mt-5">
+                <div class="col-md-12 ml-3" id="article-wrapper">
+                    <h1 class="h4 ml-1 pt-5" id="h1-article">Related Articles From The Guardian</h1>
+                    <div id="section-two">
+                        <!-- Related Articles will appear here -->                        
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	<div class="br">
-			<br><br><br><br><br><br><br><br><br>
-		</div>
-	<div class="loader center-block"></div>
-	<div class="br">
-			<br><br><br><br><br><br><br><br><br><br><br>
-		</div>
-	<div id="section-one">
-		<div class="tile-group">
+        <!-- <h5>Good job, mate</h5>
+        <h5 id="translation"></h5>
 
-			<!-- main top -->
-			<div id="maintop" class="tile-l" id="desktop" style="order:2;">
-				
-			</div>
-				<!-- end main top -->
-			
-				
-			<div id="left"  class="tile-m tile-mobile" style="order:1;">
-				
-			</div>
+        <input type="text" id="text" placeholder="Text">
+        <input type="text" id="target" placeholder="Target Language">
+        <button onclick="reqTranslate()">Click here</button>
+        <br>
+        <h5 id="translation-input"></h5>
+        <br>
+        <br>
+        <br>
 
-			<div id="centerM" class="tile-m tile-desktop" style="order:3;">
-				
-			</div>
+        <input type="text" id="latitude" placeholder="latitude">
+        <input type="text" id="longitude" placeholder="longitude">
+        <button onclick="initMap()">Click here</button>
 
-			<div id="right" class="tile-m tile-desktop" style="order:4;">
-				
-			</div>
-		</div>
+        <div id="map"></div> -->
 
-	</div>
-
-	<div id="section-two">
-	</div>
-
-	<div id="section-four">
-
-		<div class="footer">
-
-
-			<div class="footer-term">
-				<a href="">Keren news all rights reserved</a>
-			</div>
-		</div>
-
-	</div>
-
-
-
-
-
-	<div class="modal fade" id="register" tabindex="-1" role="dialog"  aria-hidden="true">
-			<div class="modal-dialog" role="document">
-			  <div class="modal-content">
-				<div class="modal-header">
-				  <h5 class="modal-title" id="exampleModalLabel">Register</h5>
-				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
-				<div class="modal-body">
-				
-					<div class="form-group">
-					  <label for="recipient-name" class="col-form-label">name:</label>
-					  <input id="name" type="text" class="form-control" >
-					</div>
-					<div class="form-group">
-							<label for="recipient-name" class="col-form-label">email:</label>
-							<input id="email" type="text" class="form-control" >
-						  </div>
-					<div class="form-group">
-					  <label for="message-text" class="col-form-label">password:</label>
-					  <input id="password" type="password" class="form-control">
-					</div>
-				  
-				</div>
-				<div class="modal-footer">
-				  <button data-dismiss="modal" onclick="register()" type="button" id="btn-register" class="btn btn-primary">Register</button>
-				</div>
-			  </div>
-			</div>
-	</div>
-
-	<div class="modal fade" id="login" tabindex="-1" role="dialog"  aria-hidden="true">
-			<div class="modal-dialog" role="document">
-			  <div class="modal-content">
-				<div class="modal-header">
-				  <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
-				<div class="modal-body">
-				
-						<div class="form-group">
-							<label for="recipient-name" class="col-form-label">email:</label>
-							<input id="emailLogin" type="text" class="form-control" >
-						  </div>
-					<div class="form-group">
-					  <label for="message-text" class="col-form-label">password:</label>
-					  <input id="passwordLogin" type="password" class="form-control">
-					</div>
-				  
-				</div>
-				<div class="modal-footer">
-				  <button data-dismiss="modal" onclick="login()" type="button" id="btn-login" class="btn btn-primary">Login</button>
-				</div>
-			  </div>
-			</div>
-	</div>
-
-	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-	 crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-	 crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-	 crossorigin="anonymous"></script>
-	<script type="text/javascript" src="assets/js/main2.js"></script>
-</body>
-
+        <script type="text/javascript" src="assets/js/main.js"></script>
+        <!-- <script type="text/javascript" src="assets/js/main2.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXggUYTk2oG3GXsvi-J54sruobsOiKL8Y" async defer></script>
+    </body>
 </html>

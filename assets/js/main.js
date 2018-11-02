@@ -310,6 +310,12 @@ $('#country-input').on('click', function() {
     console.log(text);
 });
 
+function signOut() {
+    console.log('masuk sini')
+    localStorage.removeItem('token')
+    location.replace('/index.html')
+  }
+
 $(document).ready(function() {
     $('#h1-maps').hide();
     $('#h1-article').hide();
