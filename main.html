@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="google-signin-client_id" content="109974535614-38ku0rbbjf3lmru0r8th6fj1s3lmvlkb.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Slab" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+        <link rel="stylesheet"              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <title>Keren News</title>
+    </head>
+    <body>
+        <!-- Start Code Here -->
+
+        <div class="d-flex justify-content-end mr-5 mt-5">
+            <h5 class="h5" onclick="signOut()">Sign Out</h5>
+        </div>
+
+        <div class="container mt-5" id="main-container">
+            <div class="d-flex ml-2">
+                <h1 class="display-2 mb-3">Keren <i class="fab fa-neos"></i>ews</h1>
+            </div>
+            <div class="d-flex flex-column mt-4 col-4 mb-5">
+                <h1 class="h4 mb-3" id="h1-input">Input country name here:</h1>
+                <form class="" id="form-country">
+                    <input type="text" class="form-control" id="country-input" placeholder="Country">
+                    <button class="btn btn-dark mt-2 btn-block" type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-12 ml-3" id="map-wrapper">
+                    <h1 class="h4 mb-4 ml-1" id="h1-maps">Location Based on Google Maps</h1>
+                    <div id="map" class="mb-5"></div>
+                </div>
+            </div>
+
+            <div class="row mb-5 mt-5">
+                <div class="col-md-12 ml-3" id="article-wrapper">
+                    <h1 class="h4 ml-1 pt-5" id="h1-article">Related Articles From The Guardian</h1>
+                    <div id="section-two">
+                        <!-- Related Articles will appear here -->                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <h5>Good job, mate</h5>
+        <h5 id="translation"></h5>
+
+        <input type="text" id="text" placeholder="Text">
+        <input type="text" id="target" placeholder="Target Language">
+        <button onclick="reqTranslate()">Click here</button>
+        <br>
+        <h5 id="translation-input"></h5>
+        <br>
+        <br>
+        <br>
+
+        <input type="text" id="latitude" placeholder="latitude">
+        <input type="text" id="longitude" placeholder="longitude">
+        <button onclick="initMap()">Click here</button>
+
+        <div id="map"></div> -->
+
+        <script type="text/javascript" src="assets/js/main.js"></script>
+        <!-- <script type="text/javascript" src="assets/js/main2.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXggUYTk2oG3GXsvi-J54sruobsOiKL8Y" async defer></script>
+    </body>
+</html>
