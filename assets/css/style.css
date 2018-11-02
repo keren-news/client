@@ -1,0 +1,100 @@
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+/* font-family: 'Oswald', sans-serif; */
+#map {
+    margin: auto;
+    height: 99%;
+    width: 99%;
+}
+
+#h1-input {
+    /* font-family: 'Roboto Slab', serif; */
+    font-family: 'Oswald', sans-serif;
+}
+
+#h1-maps {
+    font-family: 'Oswald', sans-serif;
+}
+
+#h1-article {
+    font-family: 'Oswald', sans-serif;
+}
+
+#map-wrapper {
+    height: 500px;
+    width: 1000px;
+    padding: 10px;
+}
+
+#section-two {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    padding: 15px 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+  
+.article-item {
+    display: flex;
+    flex-basis: initial;
+    width: 49.5%;
+    flex-grow: 0;
+    margin-bottom: 12px;
+    background-color: #fff;
+    flex-direction: column;
+    border: 1px #d7d7d7 solid;
+    /*visibility: hidden;*/
+}
+  
+.article-img {
+    display: flex;
+    height: 300px;
+    justify-content: flex-end;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 10px 20px;
+    background-size: cover;
+    position: relative;
+}
+
+.article-img .taggroup {
+    display: flex;
+    flex-direction: row;
+}
+
+.article-group {
+    padding: 15px 20px;
+}
+
+.article-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    border-bottom: 1px #d7d7d7 solid;
+    color: #0150a0;
+    padding-bottom: 3px;
+}
+
+.article-detail {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 12.5px;
+    font-style: italic;
+    color: #484848;
+    display: flex;
+    padding: 5px 0;
+    border-bottom: 1px #d7d7d7 solid;
+}
+
+.article-detail i {
+    color: #0150a0;
+}
+
+.article-detail div {
+    margin-right: 12px;
+}
+
+.article-detail div:last-child {
+    margin-right: 0px;
+}
